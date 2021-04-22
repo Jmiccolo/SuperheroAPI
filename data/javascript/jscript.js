@@ -1,13 +1,13 @@
-window.onload = function(){
-    document.querySelector('#bouton').addEventListener("click", GetHero);
+window.onload = function () {
+	document.querySelector('#bouton').addEventListener("click", GetHero);
 }
 
-function GetHero(){
-    let xhr = new XMLHttpRequest();
+function GetHero() {
+	let xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200) {
-            let hero = JSON.parse(this.response);
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			let hero = JSON.parse(this.response);
 
 			document.querySelector("#heroimg").src = hero.image["url"];
 			document.querySelector("#heroimg").style = "display:inline";
@@ -28,12 +28,12 @@ function GetHero(){
 			(hero.powerstats["durability"] == "null" ? document.querySelector("#durability").innerHTML = "No data" : document.querySelector("#durability").innerHTML = hero.powerstats["durability"]);
 			(hero.powerstats["power"] == "null" ? document.querySelector("#power").innerHTML = "No data" : document.querySelector("#power").innerHTML = hero.powerstats["power"]);
 			(hero.powerstats["combat"] == "null" ? document.querySelector("#combat").innerHTML = "No data" : document.querySelector("#combat").innerHTML = hero.powerstats["combat"]);
-        }
-    }
-    
+		}
+	}
+
 	let rNumber = Math.floor(Math.random() * 731) + 1;
 	let heroURL = "https://www.superheroapi.com/api.php/10219711144872268/" + rNumber;
 
-    xhr.open("GET", heroURL, true);
-    xhr.send();
+	xhr.open("GET", heroURL, true);
+	xhr.send();
 }
