@@ -1,1 +1,39 @@
-code 
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+#herocard {
+  display: flex;
+  width: 80vw;
+  margin: auto;
+}
+#herocard img {
+  max-height: 80vh;
+}
+#statList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.stat {
+  text-align: center;
+  width: 50%;
+}

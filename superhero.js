@@ -5,7 +5,11 @@
     console.log(searchForm);
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+        let loading = document.createElement('h1');
+        loading.innerText = 'Loading...'
+        loading.id = 'loading';
+
+        heroCard.appendChild(loading);
         let query = document.getElementById('search');
 
         let xhr = new XMLHttpRequest();
@@ -20,7 +24,6 @@
         
         xhr.send();
 
-        console.log('Something happened');
     })
 
     function updatePage(res){
@@ -37,13 +40,17 @@
         supeImage.id = 'supeImage';
         supeImage.src = response.results[0].image.url;
 
+        let cardLabel = document.createElement('div');
+        cardLabel.appendChild(supeName);
+        cardLabel.appendChild(supeImage);
+
         let statList = document.createElement('div');
         statList.id = 'statList';
-        
-        console.log('Made IT HEre');
+
 
         for(let stat in response.results[0].powerstats){
             let statBlock = document.createElement('div');
+            statBlock.classList.add('stat');
             let statTitle = document.createElement('h2');
             statTitle.innerText = stat;
             let statValue = document.createElement('h4');
@@ -54,7 +61,6 @@
             statList.appendChild(statBlock);
         }
 
-        heroCard.appendChild(supeName);
-        heroCard.appendChild(supeImage);
+        heroCard.appendChild(cardLabel);
         heroCard.appendChild(statList);
     }
