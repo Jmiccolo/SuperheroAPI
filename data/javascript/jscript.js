@@ -11,6 +11,9 @@ function GetHero(){
 
 			document.querySelector("#heroimg").src = hero.image["url"];
 			document.querySelector("#heroimg").style = "display:inline";
+			document.querySelector("#name").style = "display:block";
+			document.querySelector("#intro").style = "display:block";
+			document.querySelector("#bouton").value = "Gimme Another Hero!";
 
 			document.querySelector("#name").innerHTML = hero.name;
 			document.querySelector("#fullname").innerHTML = hero.biography["full-name"];
@@ -19,14 +22,12 @@ function GetHero(){
 			document.querySelector("#height").innerHTML = hero.appearance["height"][0];
 			document.querySelector("#weight").innerHTML = hero.appearance["weight"][0];
 
-			document.querySelector("#intelligence").innerHTML = hero.powerstats["intelligence"];
-			document.querySelector("#strength").innerHTML = hero.powerstats["strength"];
-			document.querySelector("#speed").innerHTML = hero.powerstats["speed"];
-			document.querySelector("#durability").innerHTML = hero.powerstats["durability"];
-			document.querySelector("#power").innerHTML = hero.powerstats["power"];
-			document.querySelector("#combat").innerHTML = hero.powerstats["combat"];
-
-			document.querySelector("#bouton").value = "Gimme Another Hero!";
+			(hero.powerstats["intelligence"] == "null" ? document.querySelector("#intelligence").innerHTML = "No data" : document.querySelector("#intelligence").innerHTML = hero.powerstats["intelligence"]);
+			(hero.powerstats["strength"] == "null" ? document.querySelector("#strength").innerHTML = "No data" : document.querySelector("#strength").innerHTML = hero.powerstats["strength"]);
+			(hero.powerstats["speed"] == "null" ? document.querySelector("#speed").innerHTML = "No data" : document.querySelector("#speed").innerHTML = hero.powerstats["speed"]);
+			(hero.powerstats["durability"] == "null" ? document.querySelector("#durability").innerHTML = "No data" : document.querySelector("#durability").innerHTML = hero.powerstats["durability"]);
+			(hero.powerstats["power"] == "null" ? document.querySelector("#power").innerHTML = "No data" : document.querySelector("#power").innerHTML = hero.powerstats["power"]);
+			(hero.powerstats["combat"] == "null" ? document.querySelector("#combat").innerHTML = "No data" : document.querySelector("#combat").innerHTML = hero.powerstats["combat"]);
         }
     }
     
