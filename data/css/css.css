@@ -5,6 +5,12 @@
 	border:none;
 }
 
+#intro {
+	font-style:italic;
+	margin-bottom:-25px;
+	margin-top:-10px;
+}
+
 #bouton {
   background-color: #4CAF50; /* Green */
   border: none;
