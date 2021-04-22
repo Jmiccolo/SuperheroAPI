@@ -4,40 +4,46 @@
 <head>
 	<title>I'm In Need Of A Hero</title>
 	<meta charset="utf-8" />
-	<script src="jscript.js"></script>
+
+	<link rel="stylesheet" href="data/css/css.css" />
+	<script src="data/javascript/jscript.js"></script>
 </head>
 
 <body>
-	<h1>Get Your Heroes Here!</h1>
-	<input type="button" id="bouton" value="Gimme a Hero!" />
-	<p>Your chosen hero:</p>
+	<div id="herobox">
+		<h1>Get Your Heroes Here!</h1>
+		<input type="button" id="bouton" value="Gimme a Hero!" />
+		<p id="intro">Your chosen hero:</p>
 
-	<!-- name -->
-	<h1 id="name"></h1>
+		<!-- name -->
+		<h1 id="name"></h1>
 
-	<!-- image -->
-	<img src="" id="heroimg" />
-
+		<!-- image -->
+		<img src="" id="heroimg" style="display:none;" />
+	</div>
+	
 	<!-- stats -->
-	<h2>Basic Info</h2>
-	<ul>
-		<li>Full Name: <span id="fullname"></span></li>
-		<li>Alter-Ego(s): <span id="alterego"></span></li>
-		<li>Alignment: <span id="alignment"></span></li>
-		<hr style="width:25%;margin:0px;">
-		<li>Height: <span id="height"></span></li>
-		<li>Weight: <span id="weight"></span></li>
-	</ul>
+	<div id="statbox">
+		<h2>Basic Info</h2>
+		<ul>
+			<li>Full Name: <span class="stat" id="fullname"></span></li>
+			<li>Aliases: <span class="stat" id="aliases"></span></li>
+			<li>Alignment: <span class="stat" id="alignment"></span></li>
+			<br />
+			<li>Height: <span class="stat" id="height"></span></li>
+			<li>Weight: <span class="stat" id="weight"></span></li>
+		</ul>
 
-	<h2>Combat Stats</h2>
-	<ul>
-		<li>Intelligence: <span id="intelligence"></span></li>
-		<li>Strength: <span id="strength"></span></li>
-		<li>Speed: <span id="speed"></span></li>
-		<li>Durability: <span id="durability"></span></li>
-		<li>Power: <span id="power"></span></li>
-		<li>Combat: <span id="combat"></span></li>
-	</ul>
+		<h2>Combat Stats</h2>
+		<ul>
+			<li>Intelligence: <span class="stat" id="intelligence"></span></li>
+			<li>Strength: <span class="stat" id="strength"></span></li>
+			<li>Speed: <span class="stat" id="speed"></span></li>
+			<li>Durability: <span class="stat" id="durability"></span></li>
+			<li>Power: <span class="stat" id="power"></span></li>
+			<li>Combat: <span class="stat" id="combat"></span></li>
+		</ul>
+	</div>
 
 
 </body>
